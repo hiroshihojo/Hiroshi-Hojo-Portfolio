@@ -11,10 +11,9 @@ const featured = allProjects
   .sort((a, b) => a.data.order - b.data.order);
 ---
 
-<Layout title="Hiroshi Hojo — Portfolio">
+<Layout title="Hiroshi Hojo | 北條宏志">
   <section class="hero wrap">
     <div class="hero-main">
-      <p class="eyebrow">Physics &rarr; Materials Engineering</p>
       <h1>
         Hiroshi M. Hojo　<br> (北條宏志)
       </h1>
@@ -30,7 +29,6 @@ const featured = allProjects
         physics to materials-selection and materials-design problems, including **. 
         I'm now looking to formalize that trajectory in a materials engineering master's, with the goal of 
         enriching my knowledge in energy materials and material design.
-
       </p>
       <div class="hero-actions">
         <a class="btn" href={`${base}projects/`}>View projects &rarr;</a>
@@ -38,6 +36,10 @@ const featured = allProjects
       </div>
     </div>
 
+    <figure class="hero-photo">
+      <img src={`${base}images/hiroshi-hojo.jpg`} alt="Hiroshi Hojo" />
+      <figcaption> </figcaption>
+    </figure>
   </section>
 
   <section class="wrap section">
@@ -70,6 +72,37 @@ const featured = allProjects
     align-items: start;
     padding-top: clamp(3rem, 7vw, 6rem);
     padding-bottom: clamp(3rem, 7vw, 6rem);
+  }
+
+  .hero-photo {
+    margin: 0;
+    border: 1px solid var(--line);
+  }
+
+  .hero-photo {
+    margin: 0;
+    background: #fff;
+    padding: 0.9rem 0.9rem 0;
+    box-shadow: 0 6px 18px rgba(20, 20, 20, 0.12);
+    transform: rotate(-2deg);
+    max-width: 320px;
+    justify-self: end;
+  }
+
+  .hero-photo img {
+    width: 100%;
+    aspect-ratio: 4 / 5;
+    object-fit: cover;
+    filter: grayscale(1) contrast(1.05);
+    display: block;
+  }
+
+  .hero-photo figcaption {
+    padding: 0.9rem 0.3rem 1.4rem;
+    font-family: var(--font-mono);
+    font-size: 0.8rem;
+    color: var(--text-secondary);
+    text-align: center;
   }
 
   .hero h1 {

@@ -4,10 +4,29 @@ import Layout from "../layouts/Layout.astro";
 const base = import.meta.env.BASE_URL;
 
 const skills = [
-  { group: "Computation", items: ["Python", "pymatgen", "Quantum ESPRESSO", "NumPy / SciPy"] },
-  { group: "Physics foundations", items: ["Solid-state physics", "Quantum mechanics", "Statistical mechanics"] },
-  { group: "Data", items: ["Materials Project API", "scikit-learn", "pandas"] },
-  { group: "In progress", items: ["XRD/SEM interpretation", "Cleanroom / fabrication basics"] },
+  { group: "Laboratory", items: ["Electrochemical anodization", "Spray pyrolysis", "Hydrothermal synthesis", "Cleanroom protocols"] },
+  { group: "Characterization", items: ["XRD", "Raman spectroscopy", "Photoluminescence spectroscopy", "UV-Vis spectroscopy"] },
+  { group: "Languages", items: ["Python (data processing, analysis, visualization)", "LaTeX", "HTML"] },
+  { group: "Physics foundations", items: ["Solid-state physics", "physical electronics", "material physics"] },
+];
+
+const publications = [
+  {
+    citation: "Hojo, H. M., Husay, H. A. F., et al. \"Synthesis and characterization of broadband white light emission from ZnO nanostructures on porous silicon.\" Proceedings of the Samahang Pisika ng Pilipinas (SPP) 2026, 2026.",
+    note: "I was the Corresponding author",
+  },
+  {
+    citation: "Manuel, B. A. J., Hojo, H. M., et al. \"A comparative study of the structural and optical properties of ZnO films synthesized through spray pyrolysis and hydrothermal growth.\" Proceedings of the Samahang Pisika ng Pilipinas (SPP) 2026, 2026.",
+  },
+  {
+    citation: "Tomambo, S. R. D., Hojo, H. M., et al. \"Influence of silver immersion time on the SERS activity of silver nanostructures on porous silicon templates for methylene blue detection.\" Proceedings of the Samahang Pisika ng Pilipinas (SPP) 2026, 2026.",
+  },
+  {
+    citation: "Husay, H., Hojo, H., et al. \"Determining the resistivity of aluminum-doped zinc oxide films through current-voltage measurements.\" Proceedings of the Samahang Pisika ng Pilipinas (SPP) 2025, 2025.",
+  },
+  {
+    citation: "Lopez, J., Hojo, H., et al. \"Comparative Raman analysis of porous silicon DBRs before and after lift-off under visible and near-infrared laser excitation.\" Proceedings of the Samahang Pisika ng Pilipinas (SPP) 2025, 2025.",
+  },
 ];
 ---
 
@@ -16,11 +35,19 @@ const skills = [
     <p class="eyebrow">About</p>
     <h1>Hiroshi Hojo</h1>
     <p class="intro">
-      I'm a graduating physics major heading into a materials engineering
-      master's, focused on semiconductor and electronic materials. This
-      site documents the projects I've built to bridge physics theory and
-      materials engineering practice — replace this paragraph with your
-      own two or three sentence story.
+      Graduating physics major at the University of the Philippines Diliman,
+      where I've spent two years in the Condensed Matter Physics Laboratory's
+      semiconductor group under Dr. Armando S. Somintac. My work there spans
+      sample fabrication — electrochemical anodization, spray pyrolysis,
+      hydrothermal synthesis — through structural and optical characterization
+      via XRD, Raman, UV-Vis, and photoluminescence spectroscopy. My thesis
+      demonstrated that hydrothermally grown ZnO on porous silicon produces
+      broadband white-light emission after annealing, establishing a
+      silicon-compatible platform for light-emitting devices — work that's
+      since been presented at five Samahang Pisika ng Pilipinas conference
+      proceedings. I'm now looking to build on that foundation in a materials
+      engineering master's, with the goal of deepening my ability to design
+      and engineer materials for energy and optoelectronic applications.
     </p>
 
     <div class="skills">
@@ -37,9 +64,21 @@ const skills = [
         ))
       }
     </div>
-
+    <div class="publications">
+      <h2>Journal Proceedings</h2>
+      <ol>
+        {
+          publications.map((pub) => (
+            <li>
+              <p>{pub.citation}</p>
+              {pub.note && <span class="pub-note">{pub.note}</span>}
+            </li>
+          ))
+        }
+      </ol>
+    </div>
     <div class="links">
-      <a class="btn" href="/your-cv.pdf">Download CV &rarr;</a>
+      <a class="btn" href={`${base}Hiroshi Hojo CV.pdf`}>Download CV &rarr;</a>
       <a class="btn btn-ghost" href={`${base}projects/`}>See projects</a>
     </div>
   </section>
@@ -91,6 +130,49 @@ const skills = [
     border-bottom: 1px solid var(--line);
     color: var(--ink);
     font-size: 0.92rem;
+  }
+
+  .publications {
+    margin: 3rem 0;
+    padding-top: 2rem;
+    border-top: 1px solid var(--line);
+  }
+
+  .publications h2 {
+    font-size: 0.72rem;
+    font-family: var(--font-mono);
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: var(--text-tertiary);
+    margin-bottom: 1.25rem;
+    font-weight: 700;
+  }
+
+  .publications ol {
+    list-style: decimal;
+    margin: 0;
+    padding-left: 1.2rem;
+  }
+
+  .publications li {
+    margin-bottom: 1.1rem;
+  }
+
+  .publications li p {
+    margin: 0;
+    font-size: 0.88rem;
+    color: var(--ink);
+    line-height: 1.55;
+  }
+
+  .pub-note {
+    display: inline-block;
+    margin-top: 0.3rem;
+    font-family: var(--font-mono);
+    font-size: 0.5rem;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    color: var(--accent);
   }
 
   .links {

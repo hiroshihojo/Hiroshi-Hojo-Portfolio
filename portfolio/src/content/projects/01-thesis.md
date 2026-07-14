@@ -1,7 +1,10 @@
 ---
-title: "Undergraduate Thesis — [Your Thesis Title]"
-summary: "Reframed through a materials lens: what your physics thesis reveals about semiconductor-relevant phenomena."
-method: "Physics Thesis · [Your Method, e.g. Solid-State Theory]"
+title: "Photoluminescence of Zinc Oxide on Porous Silicon Grown via Hydrothermal Synthesis"
+summary: "Fabricated PSi substrates and ZnO nanostructures; demonstrated that hydrothermally grown ZnO on PSi, upon
+annealing at 450 °C, produces broadband visible emission spanning 400–900nm with resolved red, green, and blue
+components, establishing a silicon-compatible platform for white-light-emitting devices. Characterized using XRD,
+Raman spectroscopy, and PL spectroscopy."
+method: "BS Physics Thesis"
 track: "thesis"
 date: 2026-05-01
 status: "complete"
