@@ -7,5 +7,5 @@ import { defineConfig } from "astro/config";
 //   <your-github-username>.github.io, i.e. a user/organization site)
 export default defineConfig({
   site: "https://hiroshihojo.github.io",
-  base: "/Hiroshi-Hojo-Portfolio//",
+  base: "/Hiroshi-Hojo-Portfolio/",
 });
